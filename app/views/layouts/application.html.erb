@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
 <head>
+<<<<<<< HEAD
   <title>goo-it</title>
+=======
+  <title>Goo-it</title>
+>>>>>>> 22182fefefd4162b9d8a1b51f5a1697b47cead4e
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <header>
-    <nav>
-        <% if user_signed_in? %>
-            <strong><%= link_to current_user.email,edit_registration_path %></strong>
-            <%= link_to 'プロフィール変更', edit_user_registration_path %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-            <%= link_to 'サンイン', new_user_registration_path %>
-            <%= link_to 'ログイン', new_user_session_path %>
-        <% end %>
-    </nav>
+  <nav>
+    <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
+    <% if user_signed_in? %> 
+      <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+      <!-- *_path はUserモデルを作成したときに、
+        deviseにより自動で作成されてますので、rake routesで確認できます -->
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'プロフィール変更', edit_user_registration_path %> |
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "サインイン", new_user_registration_path %> |
+      <%= link_to "ログイン", new_user_session_path %> |
+      <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+    <% end %>
+  </nav>
 </header>
+  
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
