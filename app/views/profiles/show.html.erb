@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>店舗名:</strong>
+  <%= @profile.inzakaya_id %>
+</p>
+
+<p>
+  <strong>開店時間:</strong>
+  <%= @profile.open_time %>
+</p>
+
+<p>
+  <strong>閉店時間:</strong>
+  <%= @profile.close_time %>
+</p>
+
+<p>
+  <strong>店舗画像:</strong>
+  <%= @profile.image %>
+</p>
+
+<p>
+  <strong>電話番号:</strong>
+  <%= @profile.phone %>
+</p>
+
+<p>
+  <strong>メニュー:</strong>
+  <%= @profile.menus %>
+</p>
+
+<p>
+  <strong>アクセス:</strong>
+  <%= @profile.access %>
+</p>
+
+<p>
+  <strong>場所:</strong>
+  <%= @profile.place %>
+</p>
+
+<p>
+  <strong>タバコ:</strong>
+  <%= @profile.cigrat %>
+</p>
+
+<%= link_to '編集', edit_profile_path(@profile) %> |
+<%= link_to '戻る', profiles_path %>
