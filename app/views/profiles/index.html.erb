@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>goo-it</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>店舗名</th>
+      <th>開店時間</th>
+      <th>閉店時間</th>
+      <th>店舗画像</th>
+      <th>電話番号</th>
+      <th>メニュー</th>
+      <th>アクセス</th>
+      <th>場所</th>
+      <th>タバコ</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.inzakaya_id %></td>
+        <td><%= profile.open_time %></td>
+        <td><%= profile.close_time %></td>
+        <td><%= profile.image %></td>
+        <td><%= profile.phone %></td>
+        <td><%= profile.menus %></td>
+        <td><%= profile.access %></td>
+        <td><%= profile.place %></td>
+        <% if profile.cigrat == 0 %>
+          <td>吸わない</td>
+        <% else %>
+          <td>吸う</td>
+        <% end %>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>

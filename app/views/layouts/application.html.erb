@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Goo</title>
+  <title>goo-it</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -14,7 +14,7 @@
             <%= link_to 'プロフィール変更', edit_user_registration_path %>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
         <% else %>
-            <%= link_to 'サインアップ', new_user_registration_path %>
+            <%= link_to 'サンイン', new_user_registration_path %>
             <%= link_to 'ログイン', new_user_session_path %>
         <% end %>
     </nav>
@@ -23,6 +23,5 @@
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
-
 </body>
 </html>

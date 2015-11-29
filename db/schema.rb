@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122105441) do
+ActiveRecord::Schema.define(version: 20151129095301) do
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "inzakaya_id"
+    t.time     "open_time"
+    t.time     "close_time"
+    t.binary   "image"
+    t.integer  "phone"
+    t.text     "menus"
+    t.text     "access"
+    t.string   "place"
+    t.integer  "cigrat"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

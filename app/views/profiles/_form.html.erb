@@ -1,0 +1,55 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :店舗ID %><br>
+    <%= f.number_field :inzakaya_id %>
+  </div>
+  <div class="field">
+    <%= f.label :開店時間 %><br>
+    <%= f.time_select :open_time %>
+  </div>
+  <div class="field">
+    <%= f.label :閉店時間 %><br>
+    <%= f.time_select :close_time %>
+  </div>
+  <div class="field">
+    <%= f.label :店舗画像 %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :電話番号 %><br>
+    <%= f.number_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :メニュー %><br>
+    <%= f.text_area :menus %>
+  </div>
+  <div class="field">
+    <%= f.label :アクセス %><br>
+    <%= f.text_area :access %>
+  </div>
+  <div class="field">
+    <%= f.label :場所 %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :タバコ %><br>
+    吸う
+    <%= f.radio_button 'cigrat', 1, {:checked => true} %>吸わない
+    <%= f.radio_button 'cigrat', 0, {:checked => true} %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
