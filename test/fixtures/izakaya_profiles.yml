@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  izakaya_id: 1
+  open_time: 2015-11-29 09:17:52
+  close_time: MyString
+  image: 
+  phone: 1
+  menus: MyText
+  access: MyText
+  place: MyString
+  cigaret: 1
+
+two:
+  izakaya_id: 1
+  open_time: 2015-11-29 09:17:52
+  close_time: MyString
+  image: 
+  phone: 1
+  menus: MyText
+  access: MyText
+  place: MyString
+  cigaret: 1
