@@ -1,6 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'devise'
+# less(CSS)対応（後述LESSを使う場合）
+gem 'less-rails'
+# JavaScript のエンジンである v8 を Ruby から使えるようにする
+
+# JavaScriptコードを実行するためのエンジン
+gem 'execjs'
+
+# Twitter社が提供しているCSSとJavaScriptのフレームワーク
+gem 'twitter-bootstrap-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
