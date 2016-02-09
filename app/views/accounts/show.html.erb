@@ -1,0 +1,49 @@
+<div class="page-title">
+	<% @page_title = "マイプロフィール" %>
+	<h2><%= @page_title %></h2>
+</div>
+<div class="back">
+<h2><%= @user.username %>さんのプロフィール</h2>
+
+
+<table class="attr">
+	<tr>
+		<th width="150">名前</th>
+		<td><%= @user.username %></td>
+	</tr>
+	<tr>
+		<th>生年月日</th>
+		<td><%= @user.birth_date %></td>
+	</tr>
+	<tr>
+		<th>職業</th>
+		<td><%= @user.job %></td>
+	</tr>
+	<tr>
+		<th>性別</th>
+		<td><%= @user.gender == 0 ? "男" : "女" %></td>
+	</tr>
+	<tr>
+		<th>趣味</th>
+		<td><%= @user.hobby %></td>
+	</tr>
+	<tr>
+		<th>エリア</th>
+		<td><%= @user.area %></td>
+	</tr>
+	<tr>
+		<th>お酒の強さ</th>
+		<td><%= @user.alcohol_strength == 0 ? "弱い" : "強い" %></td>
+	</tr>
+	<tr>
+		<th>自己紹介</th>
+		<td><%= @user.introduction %></td>
+	</tr>
+
+</table>
+<nav>
+<%= link_to('プロフィールを変更する', edit_user_registration_path(@user)) %>
+</nav>
+</div>
+
+

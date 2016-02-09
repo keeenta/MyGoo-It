@@ -38,14 +38,28 @@ def self.from_omniauth(auth)
   def password_required?
     super && provider.blank?
   end
-  # プロフィールを変更するときによばれる
-  def update_with_password(params, *options)
+  # プロフィールを変更するときによばれる           ここを52~の文に変更
+  #def update_with_password(params, *options)
     # パスワードが空の場合
-    if encrypted_password.blank?
+    #if encrypted_password.blank?
       # パスワードがなくても更新できる
-      update_attributes(params, *options)
-    else
-      super
+      #update_attributes(params, *options)
+    #else
+      #super
+    #end
+  #end
+
+  # allow users to update their accounts without passwords
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+ 
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
     end
+ 
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
   end
 end

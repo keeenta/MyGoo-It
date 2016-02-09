@@ -1,9 +1,41 @@
 Rails.application.routes.draw do
+  get 'accounts/show'
+
+  get 'accounts/edit'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  
+  
+
+  resources :posts, except: [:new]
   resources :profiles
+  resource :account, only: [:show, :edit, :update]
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"},
-    controllers: { omniauth_callbacks: "omniauth_callbacks" }
-  get 'home/top'
-  resources :izakaya_profiles
+    :controllers => {
+ :registrations => 'users/registrations',
+ :omniauth_callbacks => 'users/omniauth_callbacks'
+ 
+ }
+ resources :users, :only => [:index, :show]
+
+
+   # controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  
+
+
+  #devise_for :users, :controllers => {
+ #:registrations => 'users/registrations',
+ 
+
+  root 'home#top'
+  resources :izakaya_profiles do
+    collection { get "search"}
+    collection{ get "search_niku"}
+
+  end
 
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,50 +1,367 @@
 body{
-	text-align: center;
 	font-family: ‘Sacramento’, cursive;
-	color: black;
-}
-
-li{
-	list-style: none;
-}
-
-#header{
-	width: 100%;
-	height: 610px;
 	background-image: url(bed220eb.jpg);
 	background-size: cover;
+	background-repeat: no-repeat;            /* 背景を繰り返さない */
+	background-attachment:fixed;             /* 背景画像を固定する */
+	position: relative;
+	z-index: 1;
+}
+/* 編集ボタン系 */
+nav{
+	margin-top: 20px;
 
 }
-#top-header{
+nav #login_email{
+	color: white;
+	margin-bottom: 10px;
+}
+nav a{
+	width: 20px;
+	height: 10px;
+	background-color: #FF7100;
+	color: white;
+	border-radius: 10px;
+	padding: 3px 5px;
+	margin:10px 10px;
+}
+nav a:hover{
+	background-color: white;
+	color: brown;
+}
+
+
+/* リンク */
+a:link { 
+	color: white;
+	text-decoration: none;
+}
+
+a:hover { color: #ccf; }
+a img { border: none; }
+
+/*コンテント */
+div#content{
+	height: 1200px;
+	width: 80%;
+	margin: 100px 10%;
+	padding-top: 80px; 
+	color: white;
+	/*background: rgba(255,255,255, 0.7);*/
+	/*border-radius: 20px;*/
+	text-align: center;
+	z-index: 33;
+}
+/* ヘッダー */
+div#header {
+  height: 80px;
+  z-index: 2;
+  margin-top: -80px;
+
+  position: fixed;
+}
+.sample a{
+	color: white;
+	font-size: 35px;
+	position: relative;
+	margin:12px 20px;
+	z-index: 2;
+}
+.sample a:hover{
+	opacity: 0.8;
+	transition: 0.6;
+}
+/* メニューバー */
+div.menubar {
+  width: 830px;
+  height: 60px;
+  line-height: 60px;
+  margin: 6px 150px;
+  padding: 2px;
+  float: left;
+}
+
+/* メニューバーのリンク */
+div.menubar a { text-decoration: none; }
+
+/* メニューバーのリンク（未訪問） */
+div.menubar a:link { color: white; }
+
+/* メニューバーのリンク（訪問済） */
+div.menubar a:visited { color: white; }
+div.menubar a:active  { color: white; }
+
+
+
+div.menubar a{
+	width: 300px;
+	height: 40px;
+	color: white;
+	
+	padding: 1px 10px;
+	font-size: 20px;
+	transition:0.6;
+	-webkit-box-sizing:border-box;
+}
+div.menubar a:hover{
+	border-bottom: 2px solid white;
+	transition:0.6;
+	-webkit-box-sizing:border-box;
+}
+
+
+
+/* フッター */
+.find-footer{
+    float:left;
+    width:100%;
+    background-color: #8B4513;
+    position:relative;
+    z-index:9999;
+}
+.find-footer-navi ul{
+    margin-top:30px;
+}
+.find-footer-navi li{
+    float:left;
+    margin-right:10px;
+    border-radius:5px;
+    font-size:14px;
+    border:1px solid #fff;
+    background:#8B4513;
+    letter-spacing:1px;
+    color:#000;
+    -webkit-transition:background-color 0.35s, color 0.35s;
+    transition:background-color 0.35s, color 0.35s;
+    display:inline-block;
+    text-align:center;
+    letter-spacing:1px;
+}
+.find-footer-navi li a{
+    display:block;
+    height:22px;
+    line-height:22px;
+    padding:0 10px;
+}
+.find-footer-navi p{
+    margin:0;
+    float:right;
+    margin-top:50px;
+}
+.find-footer-navi li:hover{
+    background-color:#fff;
+}
+.find-footer-navi ul li:hover a{
+    color:#000;
+    font-weight:bold;
+}
+.find-footer h2, .find-footer-content, .find-footer-navi ul li a, .find-footer-navi p{
+    color:#fff;
+}
+.find-footer-title{
+    float:left;
+    margin:0 0 0 100px;
+    font-size:25px;
+}
+.find-footer-content{
+    float:left;
+    margin:30px 0 0 30px;
+    font-size:15px;
+}
+.find-footer-navi{
+    float:left;
+}
+/*トップページ*/
+.top-right{
+	width: 40%;
+	float: left;
+	height: 300px;
+}
+.top-right img{
+	width: 300px;
+	height: 200px;
+	margin-left: -70px;
+}
+.top-right img:hover{
+	opacity: 0.9;
+}
+.top-left{
+	width: 60%;
+	height: 300px;
+	float: left;
+}
+
+
+
+
+/* 居酒屋プロフィール */
+/* 表:一覧表示、詳細表示 */
+.back{
 	width: 100%;
-	height: 80px;
-	background-color: black;
+	height: 500px;
+
+	padding-top: 100px;
+	background-color: #E0BD9B;
+	border-radius: 10px;
+}
+table.list, table.attr{
+	font-size: 90%;
+	width: 50%;
+	z-index: 9999;
+	margin: 0 auto;
+
+}
+
+
+table.list th, table.attr th{
+	background-color:#FFE7CC;
+	color: #6F3B38;
+	font-weight: normal;
+}
+
+table.list td, table.list th
+table.attr td, table.attr th{
+	padding: 4px;
+}
+
+table.list th{
+	text-align: center;
+}
+
+table.attr th{
+	text-align: center;
+}
+
+table.list td, table.attr td{
+	background-color: #FAD5B7;
+	color: #6F3B38;
+}
+
+/* 居酒屋検索 */
+.izakaya_search{
+	margin-top: 20px;
+	
+}
+.izakaya_search p{
+	color: brown;
+}
+
+input[type=text]{
+	width: 250px;
+	height: 17px;
+	margin: 12px auto;
+	padding-left:10px;
+}
+input[type=submit]{
+	width: 60px;
+	height: 30px;
+	margin-left: 20px;
+	border-radius: 10px;
+	background-color: brown;
 	color: white;
 }
-.header-left{
-	float: left;
-	width: 40%;
-	height: 80px;
+input[type=submit]:hover{
+	opacity: 0.8;
+
 }
-.header-right{
-	float: right;
-	width: 60%;
-	height: 80px;
+div.search_menu {
+  width: 900px;
+  height: 60px;
+  float: left;
+  line-height: 60px;
+  text-align: center;
+  margin: 30px auto;
+  margin-left: 80px;
+  padding: 2px;
+  float: left;
 }
-.header-right li{
-	float: left;
-	width: 33%;
-	height:80px;
-	line-height: 80px;
+div.search_menu a{
+	width: 200px;
+	height: 50px;
+	color: white;
+	opacity: 0.6;
+	background-color: black;
+	border-radius: 10px;
+	padding: 5px 10px;
+	font-size: 20px;
+	transition:0.6;
 	
 }
-#main-header{
-    width: 100%;
-    height: 530px;
-	
+div.search_menu a:hover{
+	background-color: white;
+	color: brown;
+	opacity: 1.0;
 
 }
 
+/* マイブログ */
+
+.main{
+	width: 100%;
+	height: 100%;
+	padding-top: 100px;
+
+	background-color: #E0BD9B;
+	border-radius: 10px;
+}
+
+h2{
+	color: brown;
+}
+
+.search_form{
+	margin-top: 20px;
+}
+textarea{
+	width: 400px;
+	height: 200px;
+	margin: 10px auto;
+}
+table{
+	margin: 100px 100px;
+}
+tbody{
+	color: brown;
+	width: 
+}
+
+td.destroy{
+	width: 60px;
+}
+
+/* プロフィール変更 */
+.back2{
+	width: 100%;
+	height: 1100px;
+	padding-top: 60px;
+	background-color: #E0BD9B;
+	border-radius: 10px;
+}
+.back2-top{
+	margin-bottom: 60px;
+}
+.back2 label{
+	color: brown;
+}
+.back2 i{
+	color: brown;
+}
+.page-title{
+	margin-bottom: 90px;
+}
+
+.page-title h2{
+	border-bottom: 2px solid white;
+	color: white;
+}
+.form3{
+	margin-bottom: 20px;
+}
+
+.submit-botton{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

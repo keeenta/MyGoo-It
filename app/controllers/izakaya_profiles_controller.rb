@@ -1,6 +1,8 @@
 class IzakayaProfilesController < ApplicationController
-  before_action :set_izakaya_profile, only: [:show, :edit, :update, :destroy]
+  
 
+
+  
   # GET /izakaya_profiles
   # GET /izakaya_profiles.json
   def index
@@ -10,12 +12,22 @@ class IzakayaProfilesController < ApplicationController
   # GET /izakaya_profiles/1
   # GET /izakaya_profiles/1.json
   def show
+    @izakaya_profiles = IzakayaProfile.find(params[:id])
+  end
+
+  #居酒屋の検索
+  def search
+    @izakaya_profiles = IzakayaProfile.search(params[:q])
+    # genre = params[:genre] ジャンル
+    render "index"
   end
 
   # GET /izakaya_profiles/new
   def new
     @izakaya_profile = IzakayaProfile.new
   end
+
+  
 
   # GET /izakaya_profiles/1/edit
   def edit
@@ -59,6 +71,11 @@ class IzakayaProfilesController < ApplicationController
       format.html { redirect_to izakaya_profiles_url, notice: 'Izakaya profile was successfully destroyed.' }
       format.json { head :no_content }
     end
+
+  end
+
+  def search_niku
+    @izakaya_profiles = IzakayaProfile.find_by(genre: "肉料理")
   end
 
   private
